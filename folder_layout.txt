@@ -1,0 +1,14 @@
+keyshield/
+├── .gitignore
+├── README.md
+├── pytest.ini
+├── requirements.txt
+├── app/
+│   ├── __init__.py          (empty file)
+│   ├── detector.py
+│   ├── main.py
+│   └── static/
+│       └── index.html
+└── tests/
+    ├── test_api.py
+    └── test_detector.py

@@ -1,0 +1,83 @@
+Welcome to KeyShield—the proactive, local protection system against API key leakage for AI developers.
+In this video, we’ll introduce the problem, our solution, and a live demo of how KeyShield works.
+
+---
+
+AI developers face a critical risk: API keys are often leaked accidentally in code commits or files.
+Existing tools like TruffleHog or GitGuardian only detect secrets after they’re exposed—by then, it’s too late.
+Credential theft bots can scrape and misuse keys within minutes.
+
+---
+
+With the explosive growth of LLM usage, more developers are juggling multiple API keys.
+Solo devs and small teams lack dedicated security infrastructure, making accidental exposure a growing threat.
+
+---
+
+KeyShield solves this with a two-layer defense: First, a real-time file monitor that triggers instant desktop alerts
+when API keys are detected in saved files. Second, a git pre-commit hook that blocks commits containing secrets before they’re pushed online.
+
+---
+
+KeyShield is privacy-first: it never logs keystrokes, stores secrets, or sends data to the cloud.
+It’s lightweight, fast, and runs entirely on your local machine.
+
+---
+
+Here’s how it works in practice. When you save a file containing an API key,
+KeyShield immediately pops up a warning with the file path, provider, and masked secret.
+
+---
+
+The alert is non-intrusive but impossible to miss.
+It ensures you’re aware of the exposure before it becomes a problem.
+
+---
+
+For manual checks, our web UI lets you paste text for scanning.
+It also integrates with our API for programmatic use. And yes—Tavily Search can be invoked here to fetch real-time, authoritative data.
+
+---
+
+Now, let’s see KeyShield in action. Here, we’re launching the real-time monitor from the terminal.
+It starts watching all files in the current directory.
+
+---
+
+We’ve just saved a file containing an OpenAI API key. Watch as KeyShield instantly detects it
+and triggers a desktop alert. The popup shows the file path, the provider, and a masked version of the key.
+
+---
+
+Next, we attempt to commit this file to git. KeyShield’s pre-commit hook kicks in,
+scans the changes, and blocks the commit with a clear error message.
+
+---
+
+KeyShield can also enrich its reports with live data. Using Tavily Search,
+it fetches up-to-date references from trusted sources directly into the alert or web UI.
+
+---
+
+Unlike post-commit tools, KeyShield is proactive, local, and privacy-focused.
+It’s the only solution that stops leaks before they happen—without cloud dependency or invasive monitoring.
+
+---
+
+Our roadmap includes Linux/Mac support, enterprise features, and CI/CD integrations.
+We’re also expanding our pattern library to cover cloud providers like AWS and Azure.
+
+---
+
+KeyShield aims to reduce API key leakage by 80% for individual developers.
+It eliminates remediation time and fosters a security-first culture in AI development.
+
+---
+
+To summarize: KeyShield is proactive, privacy-first, and developer-friendly.
+It’s the lightweight, local solution AI developers need to prevent secrets from leaking—before it’s too late.
+
+---
+
+Thank you for watching! Try KeyShield today, join our community,
+and help us make AI development safer for everyone. Built for the AI GENESIS Hackathon.
