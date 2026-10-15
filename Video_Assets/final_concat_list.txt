@@ -1,3 +1,0 @@
-file 'part1_with_voiceover.mp4'
-file 'demo_cleaned.mp4'
-file 'part3_with_voiceover.mp4'
