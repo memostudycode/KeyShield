@@ -299,7 +299,7 @@ python -m pytest -q
 
 Test fixtures build fake keys at runtime, so the repo contains no key-shaped literals for a secret scanner to flag.
 
-## Project Structure
+## Project Backbone Structure
 
 ```
 app/
@@ -379,6 +379,14 @@ pre_commit_hook.py       # Git pre-commit hook script
 - Configuration file for monitor settings
 - Cross-platform desktop notifications (Linux/Mac support)
 - Integration with CI/CD pipelines
+
+
+##Attachments
+
+For a quick hands-on testing guide, see TRY_ME.md
+
+For slide presentation,click https://github.com/memostudycode/KeyShield/blob/main/KeyShield_Slide_Deck.pdf
+
 
 ## License
 
