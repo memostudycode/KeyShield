@@ -208,6 +208,10 @@ For a quick hands-on testing guide, see [TRY_ME.md](TRY_ME.md)
 
 For demo video,click https://github.com/user-attachments/assets/6d62f9b5-f2c9-46c2-a19a-0a32c5798729
 
+
+For slide presentation,click
+https://github.com/memostudycode/KeyShield/blob/main/KeyShield_Slide_Deck.pdf
+
 ## License
 
 MIT License
@@ -220,4 +224,4 @@ I finished it with my agents team.
 
 ## Acknowledgments
 
-Built for ACT III Hackathon
+Built for ACT III Hackathon in 2026.
