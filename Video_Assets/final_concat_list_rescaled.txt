@@ -1,3 +1,0 @@
-file 'part1_final.mp4'
-file 'part2_rescaled.mp4'
-file 'part3_final.mp4'

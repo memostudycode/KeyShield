@@ -4,7 +4,7 @@
 
 KeyShield is a local secret/API key safeguard tool designed to detect exposed LLM API keys in source code, mask secrets, and prevent unintended secret leakage before users push or upload code to public platforms.
 
-![Easy: to use](https://img.shields.io/badge/Easy-to%20use-yellow?style=flat-square) ![API Keys: protection](https://img.shields.io/badge/API%20Keys-protection-red?style=flat-square&color=white) ![Python: 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square&logo=python) ![Feature: Pop-up & Terminal Warning](https://img.shields.io/badge/Feature-Pop--up%20%26%20Terminal%20Warning-purple?style=flat-square) ![GUI: Tkinter](https://img.shields.io/badge/GUI-Tkinter-green?style=flat-square)
+![Easy: to use](https://img.shields.io/badge/Easy-to%20use-yellow?style=flat-square) ![API Keys: protection](https://img.shields.io/badge/API%20Keys-protection-red?style=flat-square&color=pink) ![Python: 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square&logo=python) ![Feature: Pop-up & Terminal Warning](https://img.shields.io/badge/Feature-Pop--up%20%26%20Terminal%20Warning-purple?style=flat-square) ![GUI: Tkinter](https://img.shields.io/badge/GUI-Tkinter-green?style=flat-square)
 
 
 
@@ -299,7 +299,7 @@ python -m pytest -q
 
 Test fixtures build fake keys at runtime, so the repo contains no key-shaped literals for a secret scanner to flag.
 
-## Project Structure
+## Project Backbone Structure
 
 ```
 app/
@@ -380,6 +380,11 @@ pre_commit_hook.py       # Git pre-commit hook script
 - Cross-platform desktop notifications (Linux/Mac support)
 - Integration with CI/CD pipelines
 
+
+## Attachments
+
+For slide presentation,click https://github.com/memostudycode/KeyShield/blob/main/KeyShield_Slide_Deck.pdf
+
 ## License
 
 MIT License
@@ -392,4 +397,4 @@ I finished it with my agents team.
 
 ## Acknowledgments
 
-Built for AI GENESIS Hackathon
+Built for ACT III Hackathon in 2026.

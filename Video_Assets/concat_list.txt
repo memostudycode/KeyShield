@@ -1,3 +1,0 @@
-file 'part1_slides.mp4'
-file 'demo_cleaned.mp4'
-file 'part3_slides.mp4'
