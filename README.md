@@ -28,7 +28,7 @@ Individual AI developers face significant security risks with API key management
 
 - **Post-hoc scanning tools** only detect secrets after they've been committed and pushed online - by then, credentials may already be harvested
 - **Credential theft tools** in the wild can rapidly scrape, validate, and misuse exposed keys from public repositories
-- **No lightweight local solutions** exist that continuously monitor file changes without invasive keyboard logging
+- **No lightweight local solutions** exist that continuously monitor file changes without invasive keyboard logginG
 
 ## Solution
 
