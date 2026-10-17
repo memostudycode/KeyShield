@@ -15,11 +15,27 @@ import sys
 import tkinter as tk
 from tkinter import messagebox
 
-# Add the project root to the path so we can import app modules
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add the working-tree root to the path so the hook can import app modules.
+try:
+    result = subprocess.run(
+        ["git", "rev-parse", "--show-toplevel"],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+except OSError as exc:
+    print(f"[KeyShield] Could not locate the Git repository: {exc}", file=sys.stderr)
+    sys.exit(1)
+
+if result.returncode != 0 or not result.stdout.strip():
+    detail = result.stderr.strip() or "Git did not return a repository root."
+    print(f"[KeyShield] Could not locate the Git repository: {detail}", file=sys.stderr)
+    sys.exit(1)
+
+project_root = result.stdout.strip()
+sys.path.insert(0, project_root)
 
 from app.detector import scan
-
 
 def show_desktop_popup(file_path: str, provider: str, masked_value: str) -> None:
     """Display native Windows desktop warning popup using tkinter."""

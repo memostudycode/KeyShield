@@ -4,6 +4,14 @@
 
 **Proactive Local Protection Against API Key Leakage for AI Developers**
 
+---
+
+- Read [README.md](README.md) for project overview and market analysis
+- Read [README_detailed.md](README_detailed.md) for technical documentation
+- Read [TRY_ME.md](TRY_ME.md) to quick start
+
+---
+
 ## Short Description
 
 Lightweight local security tool that prevents API key leakage by monitoring file changes in real-time and blocking git commits containing exposed secrets.
@@ -28,7 +36,7 @@ Individual AI developers face significant security risks with API key management
 
 - **Post-hoc scanning tools** only detect secrets after they've been committed and pushed online - by then, credentials may already be harvested
 - **Credential theft tools** in the wild can rapidly scrape, validate, and misuse exposed keys from public repositories
-- **No lightweight local solutions** exist that continuously monitor file changes without invasive keyboard logginG
+- **No lightweight local solutions** exist that continuously monitor file changes without invasive keyboard logging
 
 ## Solution
 
@@ -46,6 +54,8 @@ KeyShield provides **proactive, local prevention** rather than retrospective det
 - **Git Pre-Commit Blocking** - Automatically blocks commits containing exposed secrets
 - **Zero Persistence** - No database, no login, never stores or logs your secrets
 - **Lightweight & Fast** - Minimal dependencies, instant detection on file save
+
+---
 
 ## Quick Start
 
@@ -79,12 +89,34 @@ python -m app.monitor
 
 The monitor will watch all files in the current directory and subdirectories. When you save a file containing an API key, you'll see an immediate desktop popup warning.
 
-### Install Git Pre-Commit Hook
 
-```bash
-cp pre_commit_hook.py .git/hooks/pre-commit
-chmod +x .git/hooks/pre-commit  # Linux/Mac only
+### Install and Test the Git Pre-Commit Hook
+
+The hook uses the Python interpreter available to Git; a virtual environment is not required. Make sure Python is installed and available on your `PATH`.
+
+In PowerShell, from the repository root, install the hook:
+
+```powershell
+New-Item -ItemType Directory -Force .git\hooks | Out-Null
+Copy-Item .\pre_commit_hook.py .git\hooks\pre-commit
 ```
+
+To verify it, stage a temporary file containing a **fake** key. The commit should be blocked:
+
+```powershell
+Set-Content -NoNewline .keyshield-hook-test.txt 'OPENAI_API_KEY=sk-12345678901234567890'
+git add -- .keyshield-hook-test.txt
+git commit -m "test KeyShield pre-commit hook"
+```
+
+After confirming the commit was blocked, remove the temporary file and stage its removal:
+
+```powershell
+Remove-Item .keyshield-hook-test.txt
+git add -u -- .keyshield-hook-test.txt
+```
+
+Do not use a real API key for this test.
 
 Now every `git commit` will be automatically scanned for secrets before proceeding.
 
@@ -95,6 +127,8 @@ Now every `git commit` will be automatically scanned for secrets before proceedi
 **Access:** Run `uvicorn app.main:app --host 0.0.0.0 --port 8000` and open `http://localhost:8000`
 
 The web UI allows manual text masking and provides API endpoints for integration.
+
+---
 
 ### Running Results
 
@@ -205,12 +239,9 @@ For detailed technical documentation, API reference, testing instructions, and p
 
 For a quick hands-on testing guide, see [TRY_ME.md](TRY_ME.md)
 
-
 For demo video,click https://github.com/user-attachments/assets/6d62f9b5-f2c9-46c2-a19a-0a32c5798729
 
-
-For slide presentation,click
-https://github.com/memostudycode/KeyShield/blob/main/KeyShield_Slide_Deck.pdf
+For slide presentation,click https://github.com/memostudycode/KeyShield/blob/main/KeyShield_Slide_Deck.pdf
 
 ## License
 
@@ -225,3 +256,9 @@ I finished it with my agents team.
 ## Acknowledgments
 
 Built for ACT III Hackathon in 2026.
+
+## Fun fact
+
+I got blocked by my own KeyShield hook while committing the demo fake secrets for this project. It works exactly as designed!
+
+![Fun fact](.assets/Fun%20fact.png)

@@ -7,6 +7,14 @@ KeyShield is a local secret/API key safeguard tool designed to detect exposed LL
 ![Easy: to use](https://img.shields.io/badge/Easy-to%20use-yellow?style=flat-square) ![API Keys: protection](https://img.shields.io/badge/API%20Keys-protection-red?style=flat-square&color=pink) ![Python: 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square&logo=python) ![Feature: Pop-up & Terminal Warning](https://img.shields.io/badge/Feature-Pop--up%20%26%20Terminal%20Warning-purple?style=flat-square) ![GUI: Tkinter](https://img.shields.io/badge/GUI-Tkinter-green?style=flat-square)
 
 
+---
+
+- Read [README.md](README.md) for project overview and market analysis
+- Read [README_detailed.md](README_detailed.md) for technical documentation
+- Read [TRY_ME.md](TRY_ME.md) to quick start
+
+---
+
 
 ## Current Situation
 
@@ -380,7 +388,6 @@ pre_commit_hook.py       # Git pre-commit hook script
 - Cross-platform desktop notifications (Linux/Mac support)
 - Integration with CI/CD pipelines
 
-
 ## Attachments
 
 For slide presentation,click https://github.com/memostudycode/KeyShield/blob/main/KeyShield_Slide_Deck.pdf
@@ -398,3 +405,9 @@ I finished it with my agents team.
 ## Acknowledgments
 
 Built for ACT III Hackathon in 2026.
+
+## Fun fact
+
+I got blocked by my own KeyShield hook while committing the demo fake secrets for this project. It works exactly as designed!
+
+![Fun fact](.assets/Fun%20fact.png)

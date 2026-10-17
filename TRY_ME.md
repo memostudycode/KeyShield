@@ -2,12 +2,16 @@
 
 This guide helps you quickly test all KeyShield features in under 5 minutes.
 
+## NOTICE
+
+All secret keys and credentails shown in demos are **FAKE TEST VALUES ONLY**.
+
 ## Prerequisites
 
 - Python 3.8 or higher installed
 - Git installed (for pre-commit hook test)
 
-## Setup (2 minutes)
+## Venv setup (for Task 1,3,4)
 
 ```bash
 # Navigate to KeyShield directory
@@ -23,7 +27,7 @@ pip install -r requirements.txt
 
 ---
 
-## Test 1: Real-Time File Monitor (1 minute)
+## Test 1: Real-Time File Monitor (.venv required)
 
 **Objective**: See desktop popup warning when saving a file with API key
 
@@ -63,18 +67,21 @@ rm test_file.py
 
 ---
 
-## Test 2: Git Pre-Commit Hook (1 minute)
+## Test 2: Git Pre-Commit Hook
 
 **Objective**: See commit blocking when secrets are detected
 
-### Steps:
-
 1. **Install the pre-commit hook**:
-```bash
-cp pre_commit_hook.py .git/hooks/pre-commit
+
+```powershell
+New-Item -ItemType Directory -Force .git\hooks | Out-Null
+Copy-Item .\pre_commit_hook.py .git\hooks\pre-commit
 ```
 
+Make sure Python is installed and available on your `PATH`. A virtual environment is not required.
+
 2. **Create a file with secret**:
+
 ```bash
 # Create secret_config.py
 OPENAI_KEY = "sk-A1b2C3d4E5f6G7h8I9j0KlMn"
@@ -82,21 +89,25 @@ GOOGLE_KEY = "AIzaA1b2C3d4E5f6G7h8I9j0KlMn"
 ```
 
 3. **Stage the file**:
+
 ```bash
 git add secret_config.py
 ```
 
 4. **Try to commit**:
+
 ```bash
 git commit -m "Add config with secrets"
 ```
 
 5. **Expected Result**:
-   - Commit is **blocked**
-   - Terminal shows error with affected files
-   - **Desktop popup appears** with warning
+
+- Commit is **blocked**
+- Terminal shows error with affected files
+- **Desktop popup appears** with warning
 
 6. **Remove the secret** and retry:
+
 ```bash
 # Edit secret_config.py to remove secrets
 OPENAI_KEY = "sk-****"
@@ -109,6 +120,7 @@ git commit -m "Add config (masked)"
 7. **Expected Result**: Commit succeeds
 
 8. **Clean up**:
+
 ```bash
 rm secret_config.py
 git reset --soft HEAD~1
@@ -116,7 +128,7 @@ git reset --soft HEAD~1
 
 ---
 
-## Test 3: Web UI - Manual Text Masking (1 minute)
+## Test 3: Web UI - Manual Text Masking (.venv required)
 
 **Objective**: Use the web interface to mask text
 
@@ -150,7 +162,7 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000
 
 ---
 
-## Test 4: API Endpoints (Optional - 30 seconds)
+## Test 4: API Endpoints (additional feature) (.venv required)
 
 ### Test via curl:
 
@@ -203,11 +215,13 @@ Note: `xxxx` must be at least 10 characters from `[A-Za-z0-9_-]`
 - Wait 1-2 seconds after saving for detection
 
 **Pre-commit hook not working?**
-- Ensure `.git/hooks/pre-commit` is executable
-- Check Python is in your system PATH
-- Verify dependencies are installed in activated venv
+
+- Ensure .git/hooks/pre-commit is a current copy of pre_commit_hook.py
+- Check Python is available to Git in your system PATH
+- Verify the hook can locate the repository root and that app/detector.py exists there; no activated virtual environment is required
 
 ---
+
 
 ## Clean Up After Testing
 
@@ -215,11 +229,13 @@ Note: `xxxx` must be at least 10 characters from `[A-Za-z0-9_-]`
 # Remove test files
 rm -f test_file.py secret_config.py
 
-# Remove pre-commit hook
+# Deactivate virtual environment (only for Terminal A running Task 1,3,4)
+deactivate
+
+# Task 2 does not require a virtual environment
+# Remove pre-commit hook (only for Terminal B running Task 2)
 rm -f .git/hooks/pre-commit
 
-# Deactivate virtual environment
-deactivate
 ```
 
 ---
@@ -227,8 +243,11 @@ deactivate
 ## What You Should See
 
 ✅ **Real-time alert**: Desktop popup appears immediately when saving file with secret
+
 ✅ **Commit blocking**: Git commit fails with error when secrets are staged
+
 ✅ **Text masking**: Web UI masks all detected API keys with `****`
+
 ✅ **Zero persistence**: No secrets are stored or logged anywhere
 
 ## Next Steps
@@ -240,4 +259,7 @@ deactivate
 ---
 
 **Total Testing Time**: ~5 minutes
+
 **Difficulty**: Beginner-friendly
+
+**Again**: Only Task 1,3,4 require virtual environment.Virtual enviroment in Task 2 is not required.
