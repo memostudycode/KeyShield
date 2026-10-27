@@ -1,4 +1,4 @@
-![KeyShield Cover](KeyShield_cover.jpg)
+![KeyShield Cover](.assets/KeyShield_cover.jpg)
 
 # KeyShield
 
