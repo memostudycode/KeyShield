@@ -6,7 +6,7 @@
 
 ---
 
-- Read [README.md](README.md) for project overview and market analysis
+- Read [README.md](README.md) for project overview
 - Read [README_detailed.md](README_detailed.md) for technical documentation
 - Read [TRY_ME.md](TRY_ME.md) to quick start
 - Read [NEWS.md](NEWS.md) for ongoing insights
