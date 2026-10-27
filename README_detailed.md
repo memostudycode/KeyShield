@@ -405,7 +405,7 @@ I finished it with my agents team.
 
 ## Acknowledgments
 
-Built for ACT III Hackathon in 2026.
+Built for AMD Developer Hackathon : ACT III Hackathon in 2026.
 
 ## Fun fact
 
