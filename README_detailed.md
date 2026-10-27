@@ -1,4 +1,4 @@
-![KeyShield Logo](.assets/KeyShield_logo.jpg)
+![KeyShield Logo](.assets/KeyShield_logo.png)
 
 # KeyShield
 
@@ -406,6 +406,9 @@ I finished it with my agents team.
 ## Acknowledgments
 
 Built for AMD Developer Hackathon : ACT III Hackathon in 2026.
+
+![AMD_Developer_Hackathon_ACT_III](.assets/AMD_Developer_Hackathon_ACT_III.png)
+
 
 ## Fun fact
 
