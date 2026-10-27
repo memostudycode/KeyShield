@@ -4,6 +4,8 @@
 
 **Proactive Local Protection Against API Key Leakage for AI Developers**
 
+![API Keys: protection](https://img.shields.io/badge/API%20Keys-protection-red?style=flat-square&color=pink) ![Python: 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square&logo=python) ![Feature: Pop-up & Terminal Warning](https://img.shields.io/badge/Feature-Pop--up%20%26%20Terminal%20Warning-purple?style=flat-square) ![GUI: Tkinter](https://img.shields.io/badge/GUI-Tkinter-green?style=flat-square)
+
 ---
 
 - Read [README.md](README.md) for project overview
